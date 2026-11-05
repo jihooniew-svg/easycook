@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyCook - Sign Up</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>EasyCook</h1>
+        <p>Simple recipes for everyday cooking.</p>
+    </header>
+
+    <main>
+        <div class="auth-box">
+            <h2>Create an account</h2>
+            <p>Start planning your favourite meals.</p>
+
+            <form id="signupForm">
+                <label for="name">Name</label>
+                <input
+                    type="text"
+                    id="name"
+                    maxlength="50"
+                    autocomplete="name"
+                    required
+                >
+
+                <label for="email">Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    autocomplete="username"
+                    required
+                >
+
+                <label for="password">Password</label>
+                <input
+                    type="password"
+                    id="password"
+                    minlength="8"
+                    autocomplete="new-password"
+                    required
+                >
+
+                <p class="small-text">Use at least 8 characters.</p>
+
+                <label for="confirmPassword">Confirm Password</label>
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    minlength="8"
+                    autocomplete="new-password"
+                    required
+                >
+
+                <button type="submit" id="authButton">Sign Up</button>
+            </form>
+
+            <p id="message" role="status"></p>
+
+            <p>Already have an account? <a href="login.html">Log in</a></p>
+        </div>
+    </main>
+
+    <footer>EasyCook | Simple recipes for everyday cooking</footer>
+    <script src="auth.js"></script>
+</body>
+</html>

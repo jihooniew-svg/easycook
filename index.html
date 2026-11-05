@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyCook - Recipe Finder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>EasyCook</h1>
+        <p>Simple recipes for everyday cooking.</p>
+    </header>
+
+    <nav>
+        <a href="index.html" class="active">Recipe Finder</a>
+        <a href="mealplan.html">Meal Planner</a>
+        <button onclick="logout()">Log Out</button>
+    </nav>
+
+    <main>
+        <h2>What would you like to cook?</h2>
+        <p>Choose a category and optionally enter an ingredient.</p>
+
+        <div class="search-box">
+            <label for="category">Category</label>
+
+            <select id="category">
+                <option value="Chicken">Chicken</option>
+                <option value="Pasta">Pasta</option>
+                <option value="Vegetarian">Vegetarian</option>
+                <option value="Seafood">Seafood</option>
+                <option value="Dessert">Dessert</option>
+            </select>
+
+            <br><br>
+
+            <label for="ingredient">Available ingredient</label>
+
+            <input
+                type="text"
+                id="ingredient"
+                placeholder="Example: garlic"
+                maxlength="50"
+            >
+
+            <p>
+                Enter one ingredient, or leave blank to browse the category.
+            </p>
+
+            <button id="findButton" onclick="displayRecipes()">
+                Find Recipes
+            </button>
+        </div>
+
+        <p id="message" role="status"></p>
+
+        <div id="recipeList" class="recipe-grid"></div>
+
+        <section id="recipeDetails" class="details-box" hidden>
+            <h2 id="recipeName"></h2>
+
+            <p id="recipeInfo"></p>
+
+            <h3>Ingredients</h3>
+            <ul id="ingredientList"></ul>
+
+            <h3>Cooking Instructions</h3>
+            <p id="instructions"></p>
+
+            <h3>Estimated Meal Cost</h3>
+
+            <p>Estimated cost per serving: RM7.00</p>
+
+            <label for="servings">Number of servings</label>
+
+            <input
+                type="number"
+                id="servings"
+                min="1"
+                max="100"
+                step="1"
+                value="1"
+            >
+
+            <button onclick="calculateCost()">Calculate Cost</button>
+
+            <p id="costResult" role="status"></p>
+
+            <button id="addButton" onclick="addMeal()">
+                Add to Meal Planner
+            </button>
+        </section>
+    </main>
+
+    <footer>Recipe data from TheMealDB | EasyCook</footer>
+
+    <script src="auth.js"></script>
+    <script src="renderer.js"></script>
+</body>
+</html>

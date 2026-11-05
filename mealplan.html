@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyCook - Meal Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>EasyCook</h1>
+        <p>Simple recipes for everyday cooking.</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Recipe Finder</a>
+        <a href="mealplan.html" class="active">Meal Planner</a>
+        <button onclick="logout()">Log Out</button>
+    </nav>
+
+    <main>
+        <h2>My Meal Planner</h2>
+        <p>Your saved meals, all in one place.</p>
+
+        <p id="message" role="status"></p>
+
+        <section id="editBox" class="details-box" hidden>
+    <h3>Edit Meal Plan</h3>
+
+    <p id="editingMealName"></p>
+
+    <form onsubmit="event.preventDefault(); updateMeal();">
+        <label for="mealDate">Meal date</label>
+        <input type="date" id="mealDate" required>
+
+        <label for="mealType">Meal type</label>
+        <select id="mealType" required>
+            <option value="Breakfast">Breakfast</option>
+            <option value="Lunch">Lunch</option>
+            <option value="Dinner">Dinner</option>
+            <option value="Snack">Snack</option>
+        </select>
+
+        <button type="submit">Save Changes</button>
+
+        <button type="button" onclick="cancelEdit()">
+            Cancel
+        </button>
+    </form>
+</section>
+
+        <div id="mealList" class="recipe-grid"></div>
+    </main>
+
+    <footer>EasyCook | Your everyday cooking companion</footer>
+
+    <script src="auth.js"></script>
+    <script src="renderer.js"></script>
+</body>
+</html>
